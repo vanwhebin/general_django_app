@@ -1,0 +1,10 @@
+.idea/*
+json/
+log/
+.env
+test.py
+fin/views11111.py
+.bashrc
+*.ipynb
+static
+venv/
