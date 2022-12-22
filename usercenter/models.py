@@ -38,7 +38,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('2', '女'),
     )
 
-    id = models.PositiveIntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=50, verbose_name="用户名", unique=True)
     nickname = models.CharField(max_length=50, null=True, blank=True, verbose_name="昵称")
     gender = models.CharField(max_length=10, choices=GENDER_TYPE, null=True, blank=True, verbose_name="性别")
@@ -95,7 +95,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Menu(models.Model):
     """ menu """
-    id = models.PositiveIntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, verbose_name="菜单显示名称", default="", blank=True)
     name = models.CharField(max_length=50, verbose_name="菜单标识名称", default="")
     url = models.CharField(max_length=50, default="", blank=True, verbose_name="菜单前台路由")
@@ -117,7 +117,7 @@ class Menu(models.Model):
 
 class Locale(models.Model):
     """ Locale 语言包 """
-    id = models.PositiveIntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     key = models.CharField(max_length=50, verbose_name='语言包的代号')
     value = models.CharField(max_length=200, verbose_name='语言包的对应语言内容')
     lang = models.CharField(max_length=15, verbose_name='语种', default='zh-CN')
@@ -136,7 +136,7 @@ class Media(models.Model):
     def __str__(self):
         return self.file
 
-    id = models.PositiveIntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     file = models.FileField(max_length=200, upload_to="%Y-%m-%d", verbose_name="文件地址")
     size = models.PositiveIntegerField(verbose_name="文件大小", null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name="uploader", verbose_name="上传用户")

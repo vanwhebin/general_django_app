@@ -35,7 +35,7 @@ INSTALLED_APPS = [
 	'django_celery_beat',
 	'django_filters',
 	'rest_framework',
-	# 'guardian',
+	'guardian',
 	'corsheaders',
 	'usercenter.apps.UsercenterConfig',
 	# 'apps.analysis.apps.AnalysisConfig',
@@ -80,7 +80,7 @@ AUTH_USER_MODEL = "usercenter.User"
 
 AUTHENTICATION_BACKENDS = (
 	'django.contrib.auth.backends.ModelBackend',
-	#'guardian.backends.ObjectPermissionBackend',
+	'guardian.backends.ObjectPermissionBackend',
 )
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -109,7 +109,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DATABASES = {
@@ -135,7 +135,7 @@ CACHES = {
 	}
 }
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
 UPLOAD_MEDIA_CHOICES = (
 	(".pdf", "PDF"), (".xlsx", "EXCEL"), (".xls", "EXCEL"), (".doc", "DOC"), (".docx", "DOC"),
