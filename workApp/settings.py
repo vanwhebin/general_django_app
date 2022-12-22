@@ -18,7 +18,7 @@ READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=True)  # 使用
 if READ_DOT_ENV_FILE:
 	env.read_env(os.path.join(CONFIG_DIR, '.env'))
 
-DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = env.bool('DJANGO_DEBUG', True)
 
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='t06f*_k9d2!on^#j4k-vw1n5!%mr(+(tn_4)=5jsmt!el9kxg5')
 
@@ -38,10 +38,6 @@ INSTALLED_APPS = [
 	'guardian',
 	'corsheaders',
 	'usercenter.apps.UsercenterConfig',
-	# 'apps.analysis.apps.AnalysisConfig',
-	# 'apps.inventory.apps.InventoryConfig',
-	# 'apps.data.apps.DataConfig',
-	# 'apps.fin.apps.FinConfig'
 ]
 
 MIDDLEWARE = [
