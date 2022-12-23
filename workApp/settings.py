@@ -112,7 +112,7 @@ DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
 		'NAME': env('MYSQL_DATABASE', default='django-bi'),
-		'HOST': env('MYSQL_HOST', default='127.0.0.1'),
+		'HOST': env('MYSQL_HOST', default='192.168.56.103'),
 		'PORT': env('MYSQL_PORT', default='3306'),
 		'USER': env('MYSQL_USER', default='root'),
 		'PASSWORD': env('MYSQL_PASSWORD', default='root'),
@@ -165,7 +165,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 
-APPEND_SLASH = False
+APPEND_SLASH = True
 RUNTIME_DIR = os.path.join(BASE_DIR, 'runtime')
 BASE_LOG_DIR = os.path.join(RUNTIME_DIR, "log")
 
@@ -173,14 +173,15 @@ REST_FRAMEWORK = {
 	# Use Django's standard `django.contrib.auth` permissions,
 	# or allow read-only access for unauthenticated users.
 	'DEFAULT_PERMISSION_CLASSES': [
-		'rest_framework.permissions.IsAuthenticated',
+		# 'rest_framework.permissions.IsAuthenticated',
 		# 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
 		# 'rest_framework.permissions.Is',
+		'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 	],
 	'DEFAULT_AUTHENTICATION_CLASSES': [
-		'rest_framework.authentication.TokenAuthentication',
+		# 'rest_framework.authentication.TokenAuthentication',
 		'rest_framework_simplejwt.authentication.JWTAuthentication',
-		# 'rest_framework.authentication.SessionAuthentication',
+		'rest_framework.authentication.SessionAuthentication',
 	],
 	'DEFAULT_RENDERER_CLASSES': (
 		'rest_framework.renderers.JSONRenderer',

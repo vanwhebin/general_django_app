@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
 from usercenter.views import MyTokenObtainPairView
 from utils.media import UploadMedia
-from workApp.settings import MEDIA_URL, MEDIA_ROOT, API_VERSION, STATIC_URL, STATIC_ROOT
+from workApp.settings import API_VERSION, STATIC_URL, STATIC_ROOT
 
 
 urlpatterns = [
@@ -18,5 +18,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(API_VERSION + 'token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path(API_VERSION + 'token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path(API_VERSION + 'token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     
 ] + static(STATIC_URL, document_root=STATIC_ROOT)
