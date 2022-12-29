@@ -3,7 +3,7 @@ import os
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, Group, Permission
 from django.utils.translation import gettext_lazy as _
 from django.db import models
-from workApp.settings import UPLOAD_MEDIA_CHOICES, MEDIA_ROOT
+from configs.default.media import UPLOAD_MEDIA_CHOICES
 
 
 class UserManager(BaseUserManager):

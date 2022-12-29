@@ -6,10 +6,10 @@ from abc import ABC
 
 from django.contrib.auth import authenticate
 from rest_framework import exceptions, serializers
-from .models import User, Media
 from django.contrib.auth.models import Permission, Group
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
+from .models import User, Media
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     username_field = User.EMAIL_FIELD

@@ -10,7 +10,7 @@ from rest_framework_simplejwt.serializers import TokenObtainSerializer, TokenObt
 
 from libs.qywx.conf import Conf
 from libs.qywx.CorpApi import CorpApi, CORP_API_TYPE
-from usercenter.models import UserManager, User
+from apps.usercenter.models import UserManager, User
 from utils.util import response
 
 

@@ -9,11 +9,11 @@ import time
 import pytz
 import datetime
 from uuid import uuid4
+from django.http import JsonResponse
 from base64 import urlsafe_b64encode
 from rest_framework import status
 
-from django.http import JsonResponse
-from workApp.settings import TIME_ZONE, BASE_LOG_DIR
+from configs.default.common import TIME_ZONE, BASE_LOG_DIR
 
 
 def uuid():

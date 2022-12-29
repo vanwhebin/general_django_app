@@ -1,5 +1,5 @@
 # _*_ coding: utf-8 _*_
-# @Time     :   2020/9/29 16:33
+# @Time     :   2022/12/29 16:33
 # @Author       vanwhebin
 from __future__ import absolute_import, unicode_literals
 
@@ -7,12 +7,13 @@ import os
 import time
 
 from rest_framework.generics import CreateAPIView
-from usercenter.serializers import MediaSerializer
-from usercenter.models import Media
-from workApp.settings import MEDIA_ROOT, UPLOAD_MEDIA_CHOICES
-from utils.util import uuid, get_md5_hash
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import response, status
+
+from apps.usercenter.serializers import MediaSerializer
+from apps.usercenter.models import Media
+from configs.default.media import MEDIA_ROOT, UPLOAD_MEDIA_CHOICES
+from utils.util import uuid, get_md5_hash
 
 
 class UploadMedia(CreateAPIView):
