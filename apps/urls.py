@@ -14,7 +14,7 @@ from configs.default.common import API_VERSION, STATIC_URL, STATIC_ROOT
 
 urlpatterns = [
     re_path(r'admin/', admin.site.urls),
-    path(API_VERSION + 'auth/', include('usercenter.urls', namespace='usercenter')),
+    path(API_VERSION + 'auth/', include('apps.usercenter.urls', namespace='usercenter')),
     path(API_VERSION + 'upload/', UploadMedia.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(API_VERSION + 'token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

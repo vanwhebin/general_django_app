@@ -7,8 +7,8 @@ from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import Group, Permission
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .models import User
-from usercenter.serializers import UserSerializer, GroupSerializer, PermissionSerializer, \
+from apps.usercenter.models import User
+from apps.usercenter.serializers import UserSerializer, GroupSerializer, PermissionSerializer, \
 	MyTokenObtainPairSerializer
 
 

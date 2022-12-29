@@ -12,7 +12,8 @@ from rest_framework import response, status
 
 from apps.usercenter.serializers import MediaSerializer
 from apps.usercenter.models import Media
-from configs.default.media import MEDIA_ROOT, UPLOAD_MEDIA_CHOICES
+from configs.default.media import UPLOAD_MEDIA_CHOICES
+from configs.default.common import MEDIA_ROOT
 from utils.util import uuid, get_md5_hash
 
 
